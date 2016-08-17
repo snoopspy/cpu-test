@@ -11,7 +11,7 @@ typedef chrono::high_resolution_clock Timer;
 
 struct Param {
   int threadCnt_{1};
-  Diff duration_{10000000000}; // 10 second
+  Diff duration_{chrono::seconds(10)};
 
   bool parse(int argc, char* argv[]) {
     if (argc == 2 && string(argv[1]) == "-h") {
@@ -27,7 +27,7 @@ struct Param {
 
   void usage() {
     cout << "cpu_test <thread count> <duration(sec)>\n";
-    cout << "exam: cpu_test 1 10\n";
+    cout << "example : cpu_test 1 10\n";
   }
 };
 
