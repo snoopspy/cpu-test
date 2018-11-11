@@ -14,14 +14,12 @@ struct Param {
   Diff duration_{chrono::seconds(10)};
 
   bool parse(int argc, char* argv[]) {
-    if (argc == 2 && string(argv[1]) == "-h") {
+    if (argc != 3) {
       usage();
       return false;
     }
-    if (argc >= 2)
-      threadCnt_ = stoi(argv[1]);
-    if (argc >= 3)
-      duration_ = Diff(strtoll(argv[2], nullptr, 0) * 1000000000);
+    threadCnt_ = stoi(argv[1]);
+    duration_ = Diff(strtoll(argv[2], nullptr, 0) * 1000000000);
     return true;
   }
 
