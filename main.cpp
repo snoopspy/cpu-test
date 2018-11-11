@@ -50,11 +50,11 @@ int main(int argc, char *argv[])
   for (int i = 0; i < param.threadCnt_; i++)
     threads.push_back(new thread(run, &param.duration_));
 
-  for (int i = 0; i < param.threadCnt_; i++)
-    threads[i]->join();
+  for (thread* thrd: threads)
+    thrd->join();
 
-  for (int i = 0; i < param.threadCnt_; i++)
-    delete threads[i];
+  for (thread* thrd: threads)
+    delete thrd;
 
   return 0;
 }
