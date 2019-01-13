@@ -25,7 +25,7 @@ struct Param {
 
   void usage() {
     cout << "cpu_test <thread count> <duration(sec)>\n";
-    cout << "example : cpu_test 1 10\n";
+    cout << "example : cpu_test 4 10\n";
   }
 };
 
