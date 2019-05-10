@@ -2,5 +2,5 @@ TEMPLATE = app
 CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
-LIBS += -pthread
+linux-g++: LIBS += -pthread
 SOURCES += main.cpp
