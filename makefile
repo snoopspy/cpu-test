@@ -1,12 +1,12 @@
-all: cpu_test
+all: cpu-test
 
-cpu_test: main.o
-	g++ -O2 -o cpu_test main.o -pthread
+cpu-test: main.o
+	g++ -O2 -o cpu-test main.o -pthread
 
 main.o:
 	g++ -O2 -std=c++0x -c -o main.o main.cpp
 
 clean:
-	rm -f cpu_test
+	rm -f cpu-test
 	rm -f *.o
 
