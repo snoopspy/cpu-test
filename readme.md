@@ -1,4 +1,4 @@
-cpu_test
+cpu-test
 ========
 ```
 cpu-test <thread count> <duration(sec)>
