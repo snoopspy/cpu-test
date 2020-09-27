@@ -1,6 +1,6 @@
 cpu_test
 ========
 ```
-cpu_test <thread count> <duration(sec)>
-example : cpu_test 4 10
+cpu-test <thread count> <duration(sec)>
+example : cpu-test 4 10
 ```
