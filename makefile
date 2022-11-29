@@ -1,12 +1,15 @@
-all: cpu-test
+TARGET=cpu-test
+SRCS=$(wildcard *.cpp)
+OBJS=$(SRCS:%.cpp=%.o)
 
-cpu-test: main.o
-	g++ -O2 -o cpu-test main.o -pthread
+CPPFLAGS+=-g -I.. -I../../../src
+CPPFLAGS+=-O2 # for release
+CPPFLAGS+=-Wall -Wextra
 
-main.o:
-	g++ -O2 -std=c++0x -c -o main.o main.cpp
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 clean:
-	rm -f cpu-test
-	rm -f *.o
-
+	rm -f $(TARGET) $(OBJS)
