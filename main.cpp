@@ -25,8 +25,8 @@ struct Param {
 	}
 
 	void usage() {
-		cout << "syntax: cpu_test <thread count> <duration(sec)>\n";
-		cout << "sample: cpu_test 4 10\n";
+		cout << "syntax: cpu-test <thread count> <duration(sec)>\n";
+		cout << "sample: cpu-test 4 30\n";
 	}
 };
 
