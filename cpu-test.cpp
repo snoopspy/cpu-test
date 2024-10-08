@@ -30,13 +30,13 @@ struct Param {
 	}
 };
 
-void run(Diff* duration) {
+void run(Diff duration) {
 	Timer timer;
 	Clock begin = timer.now();
 	while (true) {
 		Clock now = timer.now();
 		Diff diff = now - begin;
-		if (diff > *duration)
+		if (diff > duration)
 			break;
 	}
 }
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
 
 	vector<thread*> threads;
 	for (int i = 0; i < param.threadCnt_; i++)
-		threads.push_back(new thread(run, &param.duration_));
+		threads.push_back(new thread(run, param.duration_));
 
 	for (thread* thrd: threads)
 		thrd->join();

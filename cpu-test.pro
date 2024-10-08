@@ -3,4 +3,4 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 linux-g++: LIBS += -pthread
-SOURCES += main.cpp
+SOURCES += cpu-test.cpp
