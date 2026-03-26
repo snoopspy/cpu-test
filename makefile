@@ -2,7 +2,7 @@ TARGET=cpu-test
 SRCS=$(wildcard *.cpp)
 OBJS=$(SRCS:%.cpp=%.o)
 
-CPPFLAGS+=-g -I.. -I../../../src
+CPPFLAGS+=-g
 CPPFLAGS+=-O2 # for release
 CPPFLAGS+=-Wall -Wextra
 
